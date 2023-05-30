@@ -3,13 +3,28 @@ int S_chu_nhat(int c_dai, int c_rong);
 int D_chu_nhat(int d_dai, int d_rong);
 
 int main() {
-    int a, b;
+    int a, b, option;
     printf("Nhap chieu dai hinh chu nhat: ");
     scanf("%d", &a);
     printf("Nhap chieu rong hinh chu nhat: ");
     scanf("%d", &b);
-    S_chu_nhat(a, b);
-    D_chu_nhat(a, b);
+    do{
+        printf("\nBan muon tinh gi:");
+        printf("\n1. Dien tich");
+        printf("\n2. Chu vi");
+        printf("\n3.Thoat chuong trinh");
+        printf("\nNhap lua chon cua ban: ");
+        scanf("%d", &option);
+        switch (option){
+            case 1:
+                S_chu_nhat(a, b);
+                break;
+            case 2:
+                D_chu_nhat(a, b);
+                break;
+        }
+    }while (option != 3);
+    printf("Ban da thoat");
     return 0;
 }
 
